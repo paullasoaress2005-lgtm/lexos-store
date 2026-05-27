@@ -1,0 +1,6 @@
+.agents/
+.vercel/
+node_modules/
+cloudflared.log
+cloudflared.err.log
+npm-debug.log*

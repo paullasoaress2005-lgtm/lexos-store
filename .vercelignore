@@ -1,0 +1,6 @@
+.agents
+.git
+docs
+site tradicional
+cloudflared.log
+cloudflared.err.log
