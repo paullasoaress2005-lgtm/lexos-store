@@ -146,8 +146,7 @@ button {
 }
 
 .site-header {
-  position: sticky;
-  top: 16px;
+  position: relative;
   z-index: 10;
   display: flex;
   align-items: center;
@@ -173,14 +172,16 @@ button {
 .brand-mark {
   display: grid;
   place-items: center;
-  width: 48px;
-  height: 56px;
+  width: 44px;
+  height: 44px;
   flex: 0 0 auto;
+  overflow: hidden;
 }
 
 .brand-mark img {
-  max-width: 100%;
-  max-height: 100%;
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   filter: drop-shadow(0 0 10px rgba(112, 221, 255, 0.16));
   transition: filter 260ms ease, transform 260ms ease;
@@ -268,6 +269,16 @@ button {
   align-items: center;
   min-height: calc(100vh - 148px);
   padding: 104px 0 92px;
+}
+
+body[data-page="home"] .hero {
+  grid-template-columns: minmax(0, 1fr);
+  min-height: auto;
+  padding: clamp(72px, 10vh, 116px) 0 58px;
+}
+
+body[data-page="home"] .hero-copy {
+  max-width: 980px;
 }
 
 .page-hero {
@@ -467,9 +478,15 @@ h1,
 .ticker-track {
   display: flex;
   width: max-content;
-  gap: 12px;
-  padding-left: 100vw;
-  animation: tickerMove 24s linear infinite;
+  animation: tickerMove 26s linear infinite;
+}
+
+.ticker-group {
+  display: flex;
+  justify-content: space-around;
+  min-width: 100vw;
+  gap: 36px;
+  padding-right: 36px;
 }
 
 .ticker span {
@@ -484,6 +501,10 @@ h1,
 
 section:not(.hero, .page-hero) {
   padding: 108px 0;
+}
+
+.featured-section {
+  padding-top: 72px !important;
 }
 
 .split-section,
@@ -887,7 +908,7 @@ section:not(.hero, .page-hero) {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
@@ -1013,14 +1034,13 @@ section:not(.hero, .page-hero) {
   }
 
   .site-header {
-    top: 8px;
     min-height: 70px;
     padding: 10px;
   }
 
   .brand-mark {
-    width: 40px;
-    height: 46px;
+    width: 36px;
+    height: 36px;
   }
 
   .brand strong {
@@ -1035,6 +1055,14 @@ section:not(.hero, .page-hero) {
   .page-hero {
     min-height: auto;
     padding: 78px 0 76px;
+  }
+
+  body[data-page="home"] .hero {
+    padding: 62px 0 46px;
+  }
+
+  .featured-section {
+    padding-top: 58px !important;
   }
 
   h1,
