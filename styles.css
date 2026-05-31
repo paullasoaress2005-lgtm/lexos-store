@@ -458,12 +458,18 @@ h1,
 }
 
 .ticker {
-  display: flex;
-  gap: 12px;
   width: 100%;
   overflow: hidden;
   padding: 16px 0;
   border-block: 1px solid var(--line);
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  gap: 12px;
+  padding-left: 100vw;
+  animation: tickerMove 24s linear infinite;
 }
 
 .ticker span {
@@ -473,7 +479,6 @@ h1,
   font-weight: 900;
   letter-spacing: 0.26em;
   text-transform: uppercase;
-  animation: tickerMove 18s linear infinite;
   text-shadow: 0 0 14px rgba(112, 221, 255, 0.18);
 }
 
@@ -882,7 +887,7 @@ section:not(.hero, .page-hero) {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-220px);
+    transform: translateX(-100%);
   }
 }
 
